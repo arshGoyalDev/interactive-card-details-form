@@ -1,0 +1,11 @@
+{
+  "name": "Card Form",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "tailwindcss -i ./css/input.css -o ./css/style.css --watch "
+  },
+  "author": "arshGoyalDev",
+  "devDependencies": {
+    "tailwindcss": "^3.4.4"
+  }
+}
