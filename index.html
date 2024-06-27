@@ -17,51 +17,55 @@
 
     <title>Frontend Mentor | Interactive card details form</title>
   </head>
-  <body class="text-lg font-medium">
-    <main>
-      <div class="relative">
-        <img
-          src="./images/bg-main-mobile.png"
-          alt="main mobile"
-          class="w-screen absolute top-0 z-0"
-        />
-      </div>
-
-      <div class="z-10 relative flex flex-col items-end pt-10 pr-4">
-        <div class="w-3/4 relative">
-          <img src="./images/bg-card-back.png" alt="card-back" class="w-full" />
-          <p
-            class="absolute right-[13%] top-[42%] xs:top-[44%] text-xs text-neutral-white"
-          >
-            000
-          </p>
-        </div>
-        <div class="w-3/4 absolute top-[66%] right-[20%]">
+  <body class="text-xl font-medium">
+    <main class="">
+      <div class="relative xl:flex xl:w-fit xl:h-screen xl:items-center">
+        <div class="xl:h-screen">
           <img
-            src="./images/bg-card-front.png"
-            alt="card-front"
-            class="w-full"
+            src="./images/bg-main-mobile.png"
+            alt="main mobile"
+            class="w-screen absolute top-0 z-0 xl:hidden"
           />
-          <div
-            class="absolute top-0 w-full h-full rounded-md p-5 flex flex-col justify-between"
-          >
-            <img src="./images/card-logo.svg" alt="card-logo" class="w-14" />
-            <div>
-              <div class="text-xl tracking-wide text-neutral-white flex justify-between">
-                <span>0000</span>
-                <span>0000</span>
-                <span>0000</span>
-                <span>0000</span>
-              </div>
-              <div
-                class="text-xs text-neutral-lightGrayishViolet flex justify-between pt-4"
-              >
-                <p>JANE APPLESEED</p>
-                <p>00/00</p>
+          <img src="./images/bg-main-desktop.png" alt="main desktop" class="h-screen max-w-[32vw] hidden absolute left-0 xl:block">
+        </div>
+  
+        <div class="z-10 relative flex flex-col xl:flex-col-reverse items-end pt-10 pr-4 xl:p-0 xl:gap-10 xl:left-[18vw]">
+          <div class="w-3/4 xl:w-fit relative shadow-2xl">
+            <img src="./images/bg-card-back.png" alt="card-back" class="w-full" />
+            <p
+              class="absolute right-[13%] top-[42%] xs:top-[44%] xl:top-[45%] text-xs xl:text-sm text-neutral-white"
+            >
+              000
+            </p>
+          </div>
+          <div class="w-3/4 xl:w-fit absolute xl:relative top-[66%] right-[20%] shadow-2xl">
+            <img
+              src="./images/bg-card-front.png"
+              alt="card-front"
+              class="w-full"
+            />
+            <div
+              class="absolute top-0 w-full h-full rounded-md p-5 flex flex-col justify-between"
+            >
+              <img src="./images/card-logo.svg" alt="card-logo" class="w-14 xl:w-20" />
+              <div>
+                <div class="text-xl xl:text-2xl tracking-wide text-neutral-white flex justify-between">
+                  <span>0000</span>
+                  <span>0000</span>
+                  <span>0000</span>
+                  <span>0000</span>
+                </div>
+                <div
+                  class="text-xs xl:text-sm text-neutral-lightGrayishViolet flex justify-between pt-4"
+                >
+                  <p>JANE APPLESEED</p>
+                  <p>00/00</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </main>
 
