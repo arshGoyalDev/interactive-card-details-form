@@ -17,9 +17,54 @@
 
     <title>Frontend Mentor | Interactive card details form</title>
   </head>
-  <body class="bg-primary-red">
-  
-  
+  <body class="text-lg font-medium">
+    <main>
+      <div class="relative">
+        <img
+          src="./images/bg-main-mobile.png"
+          alt="main mobile"
+          class="w-screen absolute top-0 z-0"
+        />
+      </div>
+
+      <div class="z-10 relative flex flex-col items-end pt-10 pr-4">
+        <div class="w-3/4 relative">
+          <img src="./images/bg-card-back.png" alt="card-back" class="w-full" />
+          <p
+            class="absolute right-[13%] top-[42%] xs:top-[44%] text-xs text-neutral-white"
+          >
+            000
+          </p>
+        </div>
+        <div class="w-3/4 absolute top-[66%] right-[20%]">
+          <img
+            src="./images/bg-card-front.png"
+            alt="card-front"
+            class="w-full"
+          />
+          <div
+            class="absolute top-0 w-full h-full rounded-md p-5 flex flex-col justify-between"
+          >
+            <img src="./images/card-logo.svg" alt="card-logo" class="w-14" />
+            <div>
+              <div class="text-xl tracking-wide text-neutral-white flex justify-between">
+                <span>0000</span>
+                <span>0000</span>
+                <span>0000</span>
+                <span>0000</span>
+              </div>
+              <div
+                class="text-xs text-neutral-lightGrayishViolet flex justify-between pt-4"
+              >
+                <p>JANE APPLESEED</p>
+                <p>00/00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
     <!-- 0000 0000 0000 0000
   Jane Appleseed
   00/00

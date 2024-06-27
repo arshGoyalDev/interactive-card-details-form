@@ -14,6 +14,9 @@ module.exports = {
           veryDarkViolet: "hsl(278, 68%, 11%)",
         },
       },
+      screens: {
+        xs: "360px"
+      },
     },
   },
   plugins: [],
