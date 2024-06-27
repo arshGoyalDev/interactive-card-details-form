@@ -18,7 +18,7 @@
     <title>Frontend Mentor | Interactive card details form</title>
   </head>
   <body class="text-xl font-medium">
-    <main class="">
+    <main class="grid grid-cols-1 items-center">
       <div class="relative xl:flex xl:w-fit xl:h-screen xl:items-center">
         <div class="xl:h-screen">
           <img
@@ -26,19 +26,31 @@
             alt="main mobile"
             class="w-screen absolute top-0 z-0 xl:hidden"
           />
-          <img src="./images/bg-main-desktop.png" alt="main desktop" class="h-screen max-w-[32vw] hidden absolute left-0 xl:block">
+          <img
+            src="./images/bg-main-desktop.png"
+            alt="main desktop"
+            class="h-screen max-w-[32vw] hidden absolute left-0 xl:block"
+          />
         </div>
-  
-        <div class="z-10 relative flex flex-col xl:flex-col-reverse items-end pt-10 pr-4 xl:p-0 xl:gap-10 xl:left-[18vw]">
+
+        <div
+          class="z-10 relative flex flex-col xl:flex-col-reverse items-end pt-10 pr-4 xl:p-0 xl:gap-10 xl:left-[18vw]"
+        >
           <div class="w-3/4 xl:w-fit relative shadow-2xl">
-            <img src="./images/bg-card-back.png" alt="card-back" class="w-full" />
+            <img
+              src="./images/bg-card-back.png"
+              alt="card-back"
+              class="w-full"
+            />
             <p
               class="absolute right-[13%] top-[42%] xs:top-[44%] xl:top-[45%] text-xs xl:text-sm text-neutral-white"
             >
               000
             </p>
           </div>
-          <div class="w-3/4 xl:w-fit absolute xl:relative top-[66%] right-[20%] shadow-2xl">
+          <div
+            class="w-3/4 xl:w-fit absolute xl:relative top-[66%] right-[20%] shadow-2xl"
+          >
             <img
               src="./images/bg-card-front.png"
               alt="card-front"
@@ -47,9 +59,15 @@
             <div
               class="absolute top-0 w-full h-full rounded-md p-5 lg:p-8 flex flex-col justify-between"
             >
-              <img src="./images/card-logo.svg" alt="card-logo" class="w-14 md:w-20" />
+              <img
+                src="./images/card-logo.svg"
+                alt="card-logo"
+                class="w-14 md:w-20"
+              />
               <div>
-                <div class="text-xl md:text-3xl tracking-wide text-neutral-white flex justify-between">
+                <div
+                  class="text-xl md:text-3xl tracking-wide text-neutral-white flex justify-between"
+                >
                   <span>0000</span>
                   <span>0000</span>
                   <span>0000</span>
@@ -67,7 +85,79 @@
         </div>
       </div>
 
-      
+      <form>
+        <div class="mt-[14vh] p-8 flex flex-col gap-4">
+          <div>
+            <label
+              for="cardholder-name"
+              class="uppercase tracking-widest font-bold text-sm text-neutral-veryDarkViolet"
+              >Cardholder Name</label
+            >
+            <input
+              type="text"
+              name="cardholder-name"
+              id="cardholder-name"
+              placeholder="e.g. Jane Appleseed"
+              class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet cursor-pointer"
+            />
+          </div>
+          <div>
+            <label
+              for="card-number"
+              class="uppercase tracking-widest font-bold text-sm text-neutral-veryDarkViolet"
+              >card number</label
+            >
+            <input
+              type="text"
+              name="card-number"
+              id="card-number"
+              placeholder="e.g. 1234 5678 9123 0000"
+              class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet cursor-pointer"
+            />
+          </div>
+          <div class="grid gap-4 grid-cols-2">
+            <div>
+              <label
+                for="expiry-date"
+                class="uppercase tracking-widest font-bold text-sm text-neutral-veryDarkViolet"
+                >exp. Date (mm/yy)</label
+              >
+              <div class="flex gap-2">
+                <input
+                  type="number"
+                  name="month"
+                  id="month"
+                  placeholder="MM"
+                  class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet cursor-pointer"
+                />
+                <input
+                  type="number"
+                  name="year"
+                  id="year"
+                  placeholder="YY"
+                  class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet cursor-pointer"
+                />
+              </div>
+            </div>
+            <div>
+              <label
+                for="cvc"
+                class="uppercase tracking-widest font-bold text-sm text-neutral-veryDarkViolet"
+              >
+                cvc
+              </label>
+              <input
+                type="number"
+                name="cvc"
+                id="cvc"
+                placeholder="eg. 123"
+                class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet cursor-pointer"
+              />
+            </div>
+          </div>
+          <button class="bg-neutral-veryDarkViolet py-3 text-neutral-white rounded-lg mt-4">Confirm</button>
+        </div>
+      </form>
     </main>
 
     <!-- 0000 0000 0000 0000
