@@ -18,7 +18,7 @@
     <title>Frontend Mentor | Interactive card details form</title>
   </head>
   <body class="text-xl font-medium">
-    <main class="grid grid-cols-1 items-center">
+    <main class="grid grid-cols-1 xl:grid-cols-2 items-center">
       <div class="relative xl:flex xl:w-fit xl:h-screen xl:items-center">
         <div class="xl:h-screen">
           <img
@@ -85,8 +85,8 @@
         </div>
       </div>
 
-      <form>
-        <div class="mt-[14vh] p-8 flex flex-col gap-4">
+      <form class="flex justify-center">
+        <div class="mt-[14vh] md:mt-[20vh] lg:mt-[24vh] xl:mt-0 p-8 flex flex-col gap-4 lg:gap-8 max-w-[400px] xl:max-w-fit w-[500px]">
           <div>
             <label
               for="cardholder-name"
@@ -98,7 +98,7 @@
               name="cardholder-name"
               id="cardholder-name"
               placeholder="e.g. Jane Appleseed"
-              class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet cursor-pointer"
+              class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet cursor-pointer transition-all"
             />
           </div>
           <div>
@@ -112,7 +112,7 @@
               name="card-number"
               id="card-number"
               placeholder="e.g. 1234 5678 9123 0000"
-              class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet cursor-pointer"
+              class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet cursor-pointer transition-all"
             />
           </div>
           <div class="grid gap-4 grid-cols-2">
@@ -128,14 +128,14 @@
                   name="month"
                   id="month"
                   placeholder="MM"
-                  class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet cursor-pointer"
+                  class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet cursor-pointer transition-all"
                 />
                 <input
                   type="number"
                   name="year"
                   id="year"
                   placeholder="YY"
-                  class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet cursor-pointer"
+                  class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet cursor-pointer transition-all"
                 />
               </div>
             </div>
@@ -151,11 +151,11 @@
                 name="cvc"
                 id="cvc"
                 placeholder="eg. 123"
-                class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet cursor-pointer"
+                class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet cursor-pointer transition-all"
               />
             </div>
           </div>
-          <button class="bg-neutral-veryDarkViolet py-3 text-neutral-white rounded-lg mt-4">Confirm</button>
+          <button class="bg-neutral-veryDarkViolet hover:opacity-80 py-3 text-neutral-white rounded-lg mt-4 transition">Confirm</button>
         </div>
       </form>
     </main>
