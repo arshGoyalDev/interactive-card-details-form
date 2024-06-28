@@ -15,6 +15,9 @@
     <!-- css -->
     <link rel="stylesheet" href="./css/style.css" />
 
+    <!-- js -->
+    <script defer src="./js/script.js"></script>
+
     <title>Frontend Mentor | Interactive card details form</title>
   </head>
   <body class="text-xl font-medium">
@@ -43,6 +46,7 @@
               class="w-full"
             />
             <p
+              id="cvc-display"
               class="absolute right-[13%] top-[42%] xs:top-[44%] xl:top-[45%] text-xs xl:text-sm text-neutral-white"
             >
               000
@@ -66,7 +70,8 @@
               />
               <div>
                 <div
-                  class="text-xl md:text-3xl tracking-wide text-neutral-white flex justify-between"
+                id="card-number-display"
+                  class="text-xl md:text-3xl tracking-wide text-neutral-white grid grid-cols-4"
                 >
                   <span>0000</span>
                   <span>0000</span>
@@ -76,8 +81,14 @@
                 <div
                   class="text-xs md:text-base text-neutral-lightGrayishViolet flex justify-between pt-4"
                 >
-                  <p>JANE APPLESEED</p>
-                  <p>00/00</p>
+                  <p id="cardholder-name-display" class="uppercase">
+                    JANE APPLESEED
+                  </p>
+                  <p>
+                    <span id="month-display">00</span>/<span id="year-display"
+                      >00</span
+                    >
+                  </p>
                 </div>
               </div>
             </div>
@@ -85,7 +96,7 @@
         </div>
       </div>
 
-      <form class="flex justify-center">
+      <form class="flex justify-center" id="card-details-form">
         <div
           class="mt-[14vh] md:mt-[20vh] lg:mt-[24vh] xl:mt-0 p-8 flex flex-col gap-4 lg:gap-8 max-w-[400px] xl:max-w-fit w-[500px]"
         >
@@ -167,6 +178,7 @@
             </div>
           </div>
           <button
+            id="confirm-btn"
             class="bg-neutral-veryDarkViolet hover:opacity-80 py-3 text-neutral-white rounded-lg mt-4 transition"
           >
             Confirm
@@ -190,6 +202,7 @@
             We've added your card details
           </p>
           <button
+            id="continue-btn"
             class="w-full bg-neutral-veryDarkViolet hover:opacity-80 py-3 text-neutral-white rounded-lg mt-6 transition"
           >
             Continue
