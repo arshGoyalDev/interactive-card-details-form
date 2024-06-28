@@ -768,16 +768,12 @@ video {
   margin-top: 1rem;
 }
 
-.mt-\[14vh\]{
-  margin-top: 14vh;
-}
-
-.mt-5{
-  margin-top: 1.25rem;
-}
-
 .mt-6{
   margin-top: 1.5rem;
+}
+
+.mt-\[14vh\]{
+  margin-top: 14vh;
 }
 
 .box-border{
@@ -1475,10 +1471,6 @@ video {
 
 .gap-4{
   gap: 1rem;
-}
-
-.gap-6{
-  gap: 1.5rem;
 }
 
 .gap-5{
@@ -2673,6 +2665,22 @@ body {
   font-family: "Space Grotesk", sans-serif;
 }
 
+/* INPUT TYPE NUMBER */
+
+/* Chrome, Safari, Edge, Opera */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 @media (min-width: 640px){
   .sm\:container{
     width: 100%;
@@ -2746,6 +2754,15 @@ body {
 .hover\:before\:text-center:hover::before{
   content: var(--tw-content);
   text-align: center;
+}
+
+.focus\:border-neutral-veryDarkViolet:focus{
+  --tw-border-opacity: 1;
+  border-color: hsl(278 68% 11% / var(--tw-border-opacity));
+}
+
+.focus\:outline-0:focus{
+  outline-width: 0px;
 }
 
 .focus\:hover\:text-center:hover:focus{

@@ -85,8 +85,10 @@
         </div>
       </div>
 
-      <form class="justify-center hidden">
-        <div class="mt-[14vh] md:mt-[20vh] lg:mt-[24vh] xl:mt-0 p-8 flex flex-col gap-4 lg:gap-8 max-w-[400px] xl:max-w-fit w-[500px]">
+      <form class="flex justify-center">
+        <div
+          class="mt-[14vh] md:mt-[20vh] lg:mt-[24vh] xl:mt-0 p-8 flex flex-col gap-4 lg:gap-8 max-w-[400px] xl:max-w-fit w-[500px]"
+        >
           <div>
             <label
               for="cardholder-name"
@@ -98,7 +100,7 @@
               name="cardholder-name"
               id="cardholder-name"
               placeholder="e.g. Jane Appleseed"
-              class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet cursor-pointer transition-all"
+              class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet focus:border-neutral-veryDarkViolet focus:outline-0 cursor-pointer transition-all"
             />
             <p class="text-primary-red text-sm mt-2 hidden">Can't be blank</p>
           </div>
@@ -113,9 +115,11 @@
               name="card-number"
               id="card-number"
               placeholder="e.g. 1234 5678 9123 0000"
-              class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet cursor-pointer transition-all"
+              class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet focus:border-neutral-veryDarkViolet focus:outline-0 cursor-pointer transition-all"
             />
-            <p class="text-primary-red text-sm mt-2 hidden">Wrong format, numbers only</p>
+            <p class="text-primary-red text-sm mt-2 hidden">
+              Wrong format, numbers only
+            </p>
           </div>
           <div class="grid gap-4 grid-cols-2">
             <div>
@@ -130,14 +134,17 @@
                   name="month"
                   id="month"
                   placeholder="MM"
-                  class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet cursor-pointer transition-all"
+                  min="0"
+                  max="12"
+                  class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet focus:border-neutral-veryDarkViolet focus:outline-0 cursor-pointer transition-all"
                 />
                 <input
                   type="number"
                   name="year"
                   id="year"
                   placeholder="YY"
-                  class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet cursor-pointer transition-all"
+                  min="00"
+                  class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet focus:border-neutral-veryDarkViolet focus:outline-0 cursor-pointer transition-all"
                 />
               </div>
               <p class="text-primary-red text-sm mt-2 hidden">Can't be blank</p>
@@ -154,24 +161,41 @@
                 name="cvc"
                 id="cvc"
                 placeholder="eg. 123"
-                class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet cursor-pointer transition-all"
+                class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet focus:border-neutral-veryDarkViolet focus:outline-0 cursor-pointer transition-all"
               />
               <p class="text-primary-red text-sm mt-2 hidden">Can't be blank</p>
             </div>
           </div>
-          <button class="bg-neutral-veryDarkViolet hover:opacity-80 py-3 text-neutral-white rounded-lg mt-4 transition">Confirm</button>
+          <button
+            class="bg-neutral-veryDarkViolet hover:opacity-80 py-3 text-neutral-white rounded-lg mt-4 transition"
+          >
+            Confirm
+          </button>
         </div>
       </form>
 
-      <div class="mt-[14vh] md:mt-[22vh] lg:mt-[24vh] xl:mt-0 p-8 flex flex-col items-center gap-10 w-full max-w-[500px] mx-auto xl:max-w-fit">
-        <img src="./images/icon-complete.svg" alt="complete-icon" class="w-20">
+      <div
+        class="mt-[14vh] md:mt-[22vh] lg:mt-[24vh] xl:mt-0 p-8 hidden flex-col items-center gap-10 w-full max-w-[500px] mx-auto xl:max-w-fit"
+      >
+        <img
+          src="./images/icon-complete.svg"
+          alt="complete-icon"
+          class="w-20"
+        />
         <div class="flex flex-col gap-5 items-center xl:w-[420px]">
-          <h1 class="text-neutral-veryDarkViolet tracking-widest text-4xl">THANK YOU!</h1>        
-          <p class="text-neutral-darkGrayishViolet">We've added your card details</p>
-          <button class="w-full bg-neutral-veryDarkViolet hover:opacity-80 py-3 text-neutral-white rounded-lg mt-6 transition">Continue</button>
+          <h1 class="text-neutral-veryDarkViolet tracking-widest text-4xl">
+            THANK YOU!
+          </h1>
+          <p class="text-neutral-darkGrayishViolet">
+            We've added your card details
+          </p>
+          <button
+            class="w-full bg-neutral-veryDarkViolet hover:opacity-80 py-3 text-neutral-white rounded-lg mt-6 transition"
+          >
+            Continue
+          </button>
         </div>
       </div>
-
     </main>
 
     <!-- 0000 0000 0000 0000
