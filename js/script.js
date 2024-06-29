@@ -1,6 +1,7 @@
 // submit form
 
 const cardDetailsForm = document.querySelector("#card-details-form");
+const thankYouCont = document.querySelector("#thank-you-cont");
 
 let cardholderName = document.querySelector("#cardholder-name");
 let cardNumber = document.querySelector("#card-number");
@@ -11,7 +12,11 @@ let cvc = document.querySelector("#cvc");
 cardDetailsForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  // checkErrorBlank();
+  cardDetailsForm.classList.add("hidden");
+  cardDetailsForm.classList.remove("flex");
+
+  thankYouCont.classList.remove("hidden");
+  thankYouCont.classList.add("flex");
 });
 
 // interactive inputs
@@ -30,18 +35,27 @@ let display = function (value, displayCont, defaultValue) {
   }
 };
 
+// cardholder name
+
 cardholderName.addEventListener("keyup", () => {
   display(cardholderName.value, cardholderNameDisplay, "Jane Appleseed");
 });
+
+// expiry date
+
 month.addEventListener("keyup", () => {
   display(month.value, monthDisplay, "00");
 });
 year.addEventListener("keyup", () => {
   display(year.value, yearDisplay, "00");
 });
+
+// cvc
 cvc.addEventListener("keyup", () => {
   display(cvc.value, cvcDisplay, "000");
 });
+
+// card number
 
 cardNumber.addEventListener("keyup", () => {
   Number(cardNumber.value.slice(0, 4)) === 0
