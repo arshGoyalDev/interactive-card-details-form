@@ -9,14 +9,26 @@ let month = document.querySelector("#month");
 let year = document.querySelector("#year");
 let cvc = document.querySelector("#cvc");
 
+const submitOrContinue = function () {
+  cardDetailsForm.classList.toggle("hidden");
+  cardDetailsForm.classList.toggle("flex");
+
+  thankYouCont.classList.toggle("hidden");
+  thankYouCont.classList.toggle("flex");
+};
+
 cardDetailsForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  cardDetailsForm.classList.add("hidden");
-  cardDetailsForm.classList.remove("flex");
+  submitOrContinue();
+});
 
-  thankYouCont.classList.remove("hidden");
-  thankYouCont.classList.add("flex");
+// continue btn
+
+const continueBtn = document.querySelector("#continue-btn");
+
+continueBtn.addEventListener("click", () => {
+  submitOrContinue();
 });
 
 // interactive inputs
@@ -60,14 +72,26 @@ cvc.addEventListener("keyup", () => {
 cardNumber.addEventListener("keyup", () => {
   Number(cardNumber.value.slice(0, 4)) === 0
     ? (cardNumberDisplay.children[0].textContent = "0000")
-    : (cardNumberDisplay.children[0].textContent = cardNumber.value.slice(0, 4));
-    Number(cardNumber.value.slice(5, 9)) === 0
+    : (cardNumberDisplay.children[0].textContent = cardNumber.value.slice(
+        0,
+        4
+      ));
+  Number(cardNumber.value.slice(5, 9)) === 0
     ? (cardNumberDisplay.children[1].textContent = "0000")
-    : (cardNumberDisplay.children[1].textContent = cardNumber.value.slice(5, 9));
-    Number(cardNumber.value.slice(10, 14)) === 0
+    : (cardNumberDisplay.children[1].textContent = cardNumber.value.slice(
+        5,
+        9
+      ));
+  Number(cardNumber.value.slice(10, 14)) === 0
     ? (cardNumberDisplay.children[2].textContent = "0000")
-    : (cardNumberDisplay.children[2].textContent = cardNumber.value.slice(10, 14));
-    Number(cardNumber.value.slice(15, 19)) === 0
+    : (cardNumberDisplay.children[2].textContent = cardNumber.value.slice(
+        10,
+        14
+      ));
+  Number(cardNumber.value.slice(15, 19)) === 0
     ? (cardNumberDisplay.children[3].textContent = "0000")
-    : (cardNumberDisplay.children[3].textContent = cardNumber.value.slice(15, 19));
+    : (cardNumberDisplay.children[3].textContent = cardNumber.value.slice(
+        15,
+        19
+      ));
 });
