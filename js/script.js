@@ -6,38 +6,48 @@ let cvc = document.querySelector("#cvc");
 
 // errors
 
-// error - blank
-
-const toggleErrorBlank = function (element, showError) {
+const toggleError = function (element, showError, errorContent) {
   if (showError) {
     element.classList.add("border-primary-red");
     element.classList.remove("border-neutral-lightGrayishViolet");
-    element.parentElement.querySelector(".error").textContent = "Can't be blank"
-
+    element.parentElement.querySelector(".error").textContent = errorContent;
   } else {
     element.classList.remove("border-primary-red");
     element.classList.add("border-neutral-lightGrayishViolet");
-    element.parentElement.querySelector(".error").textContent = ""
+    element.parentElement.querySelector(".error").textContent = "";
   }
 };
 
+// error - blank
+
 const checkErrorBlank = function () {
+  const errorContent = "Can't be blank";
   Number(cardholderName.value) === 0
-    ? toggleErrorBlank(cardholderName, true)
-    : toggleErrorBlank(cardholderName, false);
+    ? toggleError(cardholderName, true, errorContent)
+    : toggleError(cardholderName, false);
   Number(cardNumber.value) === 0
-    ? toggleErrorBlank(cardNumber, true)
-    : toggleErrorBlank(cardNumber, false);
+    ? toggleError(cardNumber, true, errorContent)
+    : toggleError(cardNumber, false);
   Number(month.value) === 0
-    ? toggleErrorBlank(month, true)
-    : toggleErrorBlank(month, false);
+    ? toggleError(month, true, errorContent)
+    : toggleError(month, false);
   Number(year.value) === 0
-    ? toggleErrorBlank(year, true)
-    : toggleErrorBlank(year, false);
+    ? toggleError(year, true, errorContent)
+    : toggleError(year, false);
   Number(cvc.value) === 0
-    ? toggleErrorBlank(cvc, true)
-    : toggleErrorBlank(cvc, false);
+    ? toggleError(cvc, true, errorContent)
+    : toggleError(cvc, false);
 };
+
+// error - cardNumber
+
+const checkErrorCardNumber =  function() {
+  if (cardNumber.value.match(/^(?:\d[ ]*?){16}$/)) {
+    toggleError(cardNumber, true, "Wrong format, numbers only");
+  } else {
+    toggleError(cardNumber, false);
+  }
+}
 
 // submit form
 
@@ -55,7 +65,10 @@ const submitOrContinue = function () {
 cardDetailsForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  checkErrorBlank();
+  // checkCardNumber();
+
+  checkErrorCardNumber();
+  // checkErrorBlank();
 
   // submitOrContinue();
 });
