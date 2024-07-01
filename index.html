@@ -113,7 +113,7 @@
               placeholder="e.g. Jane Appleseed"
               class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet focus:border-neutral-veryDarkViolet focus:outline-0 cursor-pointer transition-all"
             />
-            <p class="text-primary-red text-sm mt-2 hidden">Can't be blank</p>
+            <p class="text-primary-red text-sm mt-2 error"></p>
           </div>
           <div>
             <label
@@ -128,8 +128,8 @@
               placeholder="e.g. 1234 5678 9123 0000"
               class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet focus:border-neutral-veryDarkViolet focus:outline-0 cursor-pointer transition-all"
             />
-            <p class="text-primary-red text-sm mt-2 hidden">
-              Wrong format, numbers only
+            <p class="text-primary-red text-sm mt-2 error">
+              <!-- Wrong format, numbers only -->
             </p>
           </div>
           <div class="grid gap-4 grid-cols-2">
@@ -139,26 +139,33 @@
                 class="uppercase tracking-widest font-bold text-sm text-neutral-veryDarkViolet"
                 >exp. Date (mm/yy)</label
               >
-              <div class="flex gap-2">
-                <input
-                  type="number"
-                  name="month"
-                  id="month"
-                  placeholder="MM"
-                  min="0"
-                  max="12"
-                  class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet focus:border-neutral-veryDarkViolet focus:outline-0 cursor-pointer transition-all"
-                />
-                <input
-                  type="number"
-                  name="year"
-                  id="year"
-                  placeholder="YY"
-                  min="00"
-                  class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet focus:border-neutral-veryDarkViolet focus:outline-0 cursor-pointer transition-all"
-                />
+              <div class="grid gap-2 grid-cols-2">
+                <div>
+
+                  <input
+                    type="number"
+                    name="month"
+                    id="month"
+                    placeholder="MM"
+                    min="0"
+                    max="12"
+                    class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet focus:border-neutral-veryDarkViolet focus:outline-0 cursor-pointer transition-all"
+                  />
+                  <p class="text-primary-red text-sm mt-2 error"></p>
+                </div>
+                <div>
+
+                  <input
+                    type="number"
+                    name="year"
+                    id="year"
+                    placeholder="YY"
+                    min="00"
+                    class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet focus:border-neutral-veryDarkViolet focus:outline-0 cursor-pointer transition-all"
+                  />
+                  <p class="text-primary-red text-sm mt-2 error"></p>
+                </div>
               </div>
-              <p class="text-primary-red text-sm mt-2 hidden">Can't be blank</p>
             </div>
             <div>
               <label
@@ -171,10 +178,12 @@
                 type="number"
                 name="cvc"
                 id="cvc"
+                min="000"
+                max="999"
                 placeholder="eg. 123"
                 class="w-full border-[1px] border-neutral-lightGrayishViolet rounded-lg px-4 py-2 mt-2 placeholder:text-neutral-lightGrayishViolet hover:border-neutral-veryDarkViolet focus:border-neutral-veryDarkViolet focus:outline-0 cursor-pointer transition-all"
               />
-              <p class="text-primary-red text-sm mt-2 hidden">Can't be blank</p>
+              <p class="text-primary-red text-sm mt-2 error"></p>
             </div>
           </div>
           <button

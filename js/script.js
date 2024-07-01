@@ -1,13 +1,48 @@
-// submit form
-
-const cardDetailsForm = document.querySelector("#card-details-form");
-const thankYouCont = document.querySelector("#thank-you-cont");
-
 let cardholderName = document.querySelector("#cardholder-name");
 let cardNumber = document.querySelector("#card-number");
 let month = document.querySelector("#month");
 let year = document.querySelector("#year");
 let cvc = document.querySelector("#cvc");
+
+// errors
+
+// error - blank
+
+const toggleErrorBlank = function (element, showError) {
+  if (showError) {
+    element.classList.add("border-primary-red");
+    element.classList.remove("border-neutral-lightGrayishViolet");
+    element.parentElement.querySelector(".error").textContent = "Can't be blank"
+
+  } else {
+    element.classList.remove("border-primary-red");
+    element.classList.add("border-neutral-lightGrayishViolet");
+    element.parentElement.querySelector(".error").textContent = ""
+  }
+};
+
+const checkErrorBlank = function () {
+  Number(cardholderName.value) === 0
+    ? toggleErrorBlank(cardholderName, true)
+    : toggleErrorBlank(cardholderName, false);
+  Number(cardNumber.value) === 0
+    ? toggleErrorBlank(cardNumber, true)
+    : toggleErrorBlank(cardNumber, false);
+  Number(month.value) === 0
+    ? toggleErrorBlank(month, true)
+    : toggleErrorBlank(month, false);
+  Number(year.value) === 0
+    ? toggleErrorBlank(year, true)
+    : toggleErrorBlank(year, false);
+  Number(cvc.value) === 0
+    ? toggleErrorBlank(cvc, true)
+    : toggleErrorBlank(cvc, false);
+};
+
+// submit form
+
+const cardDetailsForm = document.querySelector("#card-details-form");
+const thankYouCont = document.querySelector("#thank-you-cont");
 
 const submitOrContinue = function () {
   cardDetailsForm.classList.toggle("hidden");
@@ -20,7 +55,9 @@ const submitOrContinue = function () {
 cardDetailsForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  submitOrContinue();
+  checkErrorBlank();
+
+  // submitOrContinue();
 });
 
 // continue btn
