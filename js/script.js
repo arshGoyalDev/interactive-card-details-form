@@ -109,6 +109,12 @@ continueBtn.addEventListener("click", () => {
   monthDisplay.textContent = "00";
   yearDisplay.textContent = "00";
   cvcDisplay = "00";
+
+  cardNumber.value = "";
+  cardholderName.value = "";
+  month.value = "";
+  year.value = "";
+  cvc.value = "";
 });
 
 // interactive inputs
