@@ -104,9 +104,8 @@ continueBtn.addEventListener("click", () => {
 
   cardholderNameDisplay.textContent = "Jane Appleseed";
   for (let key in cardNumberDisplay.children) {
-    cardNumberDisplay.children[key].textContent = "0000"
+    cardNumberDisplay.children[key].textContent = "0000";
   }
-  // cardNumberDisplay.textContent = "0000 0000 0000 0000";
   monthDisplay.textContent = "00";
   yearDisplay.textContent = "00";
   cvcDisplay = "00";
