@@ -54,14 +54,10 @@ const checkErrorBlank = function () {
 const checkErrorCardNumber = function () {
   if (cardNumber.value.match(/^(?:\d[ ]*?){16}$/)) {
     toggleError(cardNumber, false, "");
-    
+
     errorCardNumber = false;
   } else {
-    toggleError(
-      cardNumber,
-      true,
-      "Wrong format, numbers only",
-    );
+    toggleError(cardNumber, true, "Wrong format, numbers only");
     errorCardNumber = true;
   }
 };
@@ -84,9 +80,7 @@ cardDetailsForm.addEventListener("submit", (e) => {
 
   checkErrorBlank();
 
-  errorCardNumber
-    ? checkErrorBlank()
-    : checkErrorCardNumber();
+  errorCardNumber ? checkErrorBlank() : checkErrorCardNumber();
 
   if (
     !errorCardholderName &&
@@ -107,6 +101,15 @@ const continueBtn = document.querySelector("#continue-btn");
 
 continueBtn.addEventListener("click", () => {
   submitOrContinue();
+
+  cardholderNameDisplay.textContent = "Jane Appleseed";
+  for (let key in cardNumberDisplay.children) {
+    cardNumberDisplay.children[key].textContent = "0000"
+  }
+  // cardNumberDisplay.textContent = "0000 0000 0000 0000";
+  monthDisplay.textContent = "00";
+  yearDisplay.textContent = "00";
+  cvcDisplay = "00";
 });
 
 // interactive inputs
