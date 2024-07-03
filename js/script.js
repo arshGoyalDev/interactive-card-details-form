@@ -88,17 +88,17 @@ cardDetailsForm.addEventListener("submit", (e) => {
     ? checkErrorBlank()
     : checkErrorCardNumber();
 
-  // if (
-  //   !errorCardholderName &&
-  //   !errorCardNumber &&
-  //   !errorMonth &&
-  //   !errorYear &&
-  //   !errorCvc
-  // ) {
-  //   submitOrContinue();
-  // } else {
-  //   console.log("jdkjd");
-  // }
+  if (
+    !errorCardholderName &&
+    !errorCardNumber &&
+    !errorMonth &&
+    !errorYear &&
+    !errorCvc
+  ) {
+    submitOrContinue();
+  } else {
+    alert("Please recheck the card details");
+  }
 });
 
 // continue btn
