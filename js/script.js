@@ -4,6 +4,12 @@ let month = document.querySelector("#month");
 let year = document.querySelector("#year");
 let cvc = document.querySelector("#cvc");
 
+let errorCardholderName;
+let errorCardNumber;
+let errorMonth;
+let errorYear;
+let errorCvc;
+
 // errors
 
 const toggleError = function (element, showError, errorContent) {
@@ -14,7 +20,7 @@ const toggleError = function (element, showError, errorContent) {
   } else {
     element.classList.remove("border-primary-red");
     element.classList.add("border-neutral-lightGrayishViolet");
-    element.parentElement.querySelector(".error").textContent = "";
+    element.parentElement.querySelector(".error").textContent = errorContent;
   }
 };
 
@@ -23,31 +29,42 @@ const toggleError = function (element, showError, errorContent) {
 const checkErrorBlank = function () {
   const errorContent = "Can't be blank";
   Number(cardholderName.value) === 0
-    ? toggleError(cardholderName, true, errorContent)
-    : toggleError(cardholderName, false);
+    ? (toggleError(cardholderName, true, errorContent, errorCardholderName),
+      (errorCardholderName = true))
+    : (toggleError(cardholderName, false, "", errorCardholderName),
+      (errorCardholderName = false));
   Number(cardNumber.value) === 0
-    ? toggleError(cardNumber, true, errorContent)
-    : toggleError(cardNumber, false);
+    ? (toggleError(cardNumber, true, errorContent, errorCardNumber),
+      (errorCardNumber = true))
+    : (toggleError(cardNumber, false, "", errorCardNumber),
+      (errorCardNumber = false));
   Number(month.value) === 0
-    ? toggleError(month, true, errorContent)
-    : toggleError(month, false);
+    ? (toggleError(month, true, errorContent, errorMonth), (errorMonth = true))
+    : (toggleError(month, false, "", errorMonth), (errorMonth = false));
   Number(year.value) === 0
-    ? toggleError(year, true, errorContent)
-    : toggleError(year, false);
+    ? (toggleError(year, true, errorContent, errorYear), (errorYear = true))
+    : (toggleError(year, false, "", errorYear), (errorYear = false));
   Number(cvc.value) === 0
-    ? toggleError(cvc, true, errorContent)
-    : toggleError(cvc, false);
+    ? (toggleError(cvc, true, errorContent, errorCvc), (errorCvc = true))
+    : (toggleError(cvc, false, "", errorCvc), (errorCvc = false));
 };
 
 // error - cardNumber
 
-const checkErrorCardNumber =  function() {
+const checkErrorCardNumber = function () {
   if (cardNumber.value.match(/^(?:\d[ ]*?){16}$/)) {
-    toggleError(cardNumber, true, "Wrong format, numbers only");
+    toggleError(cardNumber, false, "");
+    
+    errorCardNumber = false;
   } else {
-    toggleError(cardNumber, false);
+    toggleError(
+      cardNumber,
+      true,
+      "Wrong format, numbers only",
+    );
+    errorCardNumber = true;
   }
-}
+};
 
 // submit form
 
@@ -65,12 +82,23 @@ const submitOrContinue = function () {
 cardDetailsForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  // checkCardNumber();
+  checkErrorBlank();
 
-  checkErrorCardNumber();
-  // checkErrorBlank();
+  errorCardNumber
+    ? checkErrorBlank()
+    : checkErrorCardNumber();
 
-  // submitOrContinue();
+  // if (
+  //   !errorCardholderName &&
+  //   !errorCardNumber &&
+  //   !errorMonth &&
+  //   !errorYear &&
+  //   !errorCvc
+  // ) {
+  //   submitOrContinue();
+  // } else {
+  //   console.log("jdkjd");
+  // }
 });
 
 // continue btn
