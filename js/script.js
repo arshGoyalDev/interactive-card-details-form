@@ -4,11 +4,11 @@ let month = document.querySelector("#month");
 let year = document.querySelector("#year");
 let cvc = document.querySelector("#cvc");
 
-let errorCardholderName;
-let errorCardNumber;
-let errorMonth;
-let errorYear;
-let errorCvc;
+let errorCardholderName = false;
+let errorCardNumber = false;
+let errorMonth = false;
+let errorYear = false;
+let errorCvc = false;
 
 // errors
 
@@ -149,6 +149,7 @@ year.addEventListener("keyup", () => {
 });
 
 // cvc
+
 cvc.addEventListener("keyup", () => {
   display(cvc.value, cvcDisplay, "000");
 });
